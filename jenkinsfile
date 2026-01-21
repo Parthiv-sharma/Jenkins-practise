@@ -1,21 +1,32 @@
 pipeline {
-    agent any
+    agent {lable "Agent-1"}
     stages {
-        stage('Build') {
+        stage ("Build") {
             steps {
-                sh 'echo "This is Build"'
+                script {
+                    sh """
+                        echo "Hello This is Build"
+                    """
+                }
             }
         }
-        stage('Test') {
+        stage ("Test") {
             steps {
-                sh 'echo "This is Test"'
+                script {
+                    sh """
+                        echo "Hello This is Test"
+                    """
+                }
             }
         }
-        stage('Deploy') {
+        stage ("Deploy") {
             steps {
-                sh 'echo "This is Deploy"'
+                script {
+                    sh """
+                        echo "Hello This is Deploy"
+                    """
+                }
             }
         }
-        
     }
 }
